@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/aphid/static/css/main.dad1d7c5.chunk.css",
+    "main.js": "/aphid/static/js/main.f94fbedb.chunk.js",
+    "main.js.map": "/aphid/static/js/main.f94fbedb.chunk.js.map",
+    "runtime-main.js": "/aphid/static/js/runtime-main.c04d3249.js",
+    "runtime-main.js.map": "/aphid/static/js/runtime-main.c04d3249.js.map",
+    "static/js/2.cf617037.chunk.js": "/aphid/static/js/2.cf617037.chunk.js",
+    "static/js/2.cf617037.chunk.js.map": "/aphid/static/js/2.cf617037.chunk.js.map",
+    "index.html": "/aphid/index.html",
+    "precache-manifest.1a337f6ab5c3dae038c0e998bad0ed4e.js": "/aphid/precache-manifest.1a337f6ab5c3dae038c0e998bad0ed4e.js",
+    "service-worker.js": "/aphid/service-worker.js",
+    "static/css/main.dad1d7c5.chunk.css.map": "/aphid/static/css/main.dad1d7c5.chunk.css.map",
+    "static/js/2.cf617037.chunk.js.LICENSE.txt": "/aphid/static/js/2.cf617037.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c04d3249.js",
+    "static/js/2.cf617037.chunk.js",
+    "static/css/main.dad1d7c5.chunk.css",
+    "static/js/main.f94fbedb.chunk.js"
+  ]
+}
