@@ -88,7 +88,6 @@ function FilterForm(props) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         bugs: state.bugs,
         selectedBug: state.selectedBug,

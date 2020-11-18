@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "./Login";
 
 export default function NavBar() {
     return (
@@ -41,6 +42,9 @@ export default function NavBar() {
                             </a>
                             <a href="/" className="button is-info">
                                 Log in
+                            </a>
+                            <a href="/" className="button is-info">
+                                <Login />
                             </a>
                         </div>
                     </div>
