@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { GoogleLogin } from "react-google-login";
 import { connect } from "react-redux";
-import { signIn, signOut } from "../actions/index";
+import { signIn } from "../actions/index";
 
 const clientId =
     "228831500419-1pdt6pga3o2tu5c25ueio3mekuc0avbs.apps.googleusercontent.com";
 
-function Login() {
+function Login(props) {
     const onSuccess = (response) => {
         console.log(response.profileObj);
+        props.signIn(response.profileObj);
     };
     const onFailure = (response) => {
         console.log(response.profileObj);
@@ -26,4 +27,9 @@ function Login() {
         </div>
     );
 }
-export default connect(null, { signIn, signOut })(Login);
+
+const mapStateToProps = (state) => {
+    return { signIn: state.signIn, user: state.user };
+};
+
+export default connect(mapStateToProps, { signIn })(Login);

@@ -6,9 +6,10 @@ import { signIn, signOut } from "../actions/index";
 const clientId =
     "228831500419-1pdt6pga3o2tu5c25ueio3mekuc0avbs.apps.googleusercontent.com";
 
-function Login() {
+function Login(props) {
     const onSuccess = () => {
         console.log("user has logged out");
+        props.signOut();
     };
     return (
         <div>

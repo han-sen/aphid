@@ -35,14 +35,16 @@ export const selectFilter = (filter) => {
     };
 };
 
-export const signIn = () => {
+export const signIn = (userObj) => {
     return {
         type: "SIGN_IN",
+        payload: userObj,
     };
 };
 
-export const signOut = () => {
+export const signOut = (userObj) => {
     return {
         type: "SIGN_OUT",
+        payload: userObj,
     };
 };

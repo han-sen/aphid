@@ -26,8 +26,17 @@ const filterReducer = (options = { status: "open", project: "" }, action) => {
     return { ...options };
 };
 
+const userReducer = (user = null, action) => {
+    if (action.type === "SIGN_IN") {
+        return action.payload;
+    }
+    console.log(`at the reducer, user is: ${user}`);
+    return user;
+};
+
 export default combineReducers({
     bugs: bugsReducer,
     filters: filterReducer,
     selectedBug: selectedBugReducer,
+    user: userReducer,
 });
