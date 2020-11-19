@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./Login";
+import Logout from "./Logout";
 
 export default function NavBar() {
     return (
@@ -45,6 +46,9 @@ export default function NavBar() {
                             </a>
                             <a href="/" className="button is-info">
                                 <Login />
+                            </a>
+                            <a href="/" className="button is-info">
+                                <Logout />
                             </a>
                         </div>
                     </div>

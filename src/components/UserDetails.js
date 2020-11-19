@@ -6,7 +6,7 @@ function UserDetails(props) {
         <div className="user_wrap">
             <div className="user_avatar">
                 <div className="user_avatar_inner">
-                    <p>{props.user ? props.user.givenName.slice(0, 1) : "X"}</p>
+                    <p>{props.user ? props.user.givenName.slice(0, 1) : "?"}</p>
                 </div>
             </div>
             {props.user ? (
@@ -15,7 +15,7 @@ function UserDetails(props) {
                     <p className="user_email">{props.user.email}</p>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <p>Please sign in...</p>
             )}
         </div>
     );

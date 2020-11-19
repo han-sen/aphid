@@ -1,3 +1,10 @@
+export const loadBugs = (bugs) => {
+    return {
+        type: "LOAD_BUGS",
+        payload: bugs,
+    };
+};
+
 // action create
 export const selectBug = (bug) => {
     // return an action

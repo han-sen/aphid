@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
-import seedData from "../seed";
+// import seedData from "../seed";
 
-const bugsReducer = (bugs = seedData, action) => {
+const bugsReducer = (bugs = [], action) => {
     if (action.type === "ADD_BUG") {
         return [action.payload, ...bugs];
     } else if (action.type === "EDIT_BUG") {
         return action.payload;
     } else if (action.type === "DELETE_BUG") {
+        return action.payload;
+    } else if (action.type === "LOAD_BUGS") {
         return action.payload;
     }
     return bugs;
@@ -30,7 +32,6 @@ const userReducer = (user = null, action) => {
     if (action.type === "SIGN_IN") {
         return action.payload;
     }
-    console.log(`at the reducer, user is: ${user}`);
     return user;
 };
 

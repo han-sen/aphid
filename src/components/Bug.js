@@ -7,7 +7,7 @@ export default function Bug(props) {
 
     useEffect(() => {
         if (props.selectedBug) {
-            if (props.bug.id === props.selectedBug.id) {
+            if (props.bug._id === props.selectedBug._id) {
                 setIsActive(true);
             } else {
                 setIsActive(false);
@@ -26,7 +26,7 @@ export default function Bug(props) {
             }}
         >
             <BugTitle
-                id={props.bug.id}
+                id={props.bug._id}
                 title={props.bug.title}
                 project={props.bug.project}
                 severity={props.bug.severity}

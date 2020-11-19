@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 import { selectBug } from "../actions";
+import { loadBugs } from "../actions";
 import NewBug from "./NewBug";
 import Modal from "./Modal";
 import SideBar from "./SideBar";
@@ -9,6 +11,19 @@ import BugFeed from "./BugFeed";
 
 function Dashboard(props) {
     const [modalIsActive, setModalIsActive] = useState(false);
+    useEffect(() => {
+        if (props.user) {
+            axios
+                .get(`http://localhost:3001/api/bugs/${props.user.googleId}`)
+                .then(function (response) {
+                    props.loadBugs(response.data);
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    }, [props.user]);
     return (
         <section className="dashboard_wrap">
             <SideBar bugs={props.bugs} setModalIsActive={setModalIsActive} />
@@ -29,9 +44,14 @@ function Dashboard(props) {
 }
 
 const mapStateToProps = (state) => {
-    return { bugs: state.bugs, selectedBug: state.selectedBug };
+    return {
+        bugs: state.bugs,
+        selectedBug: state.selectedBug,
+        user: state.user,
+    };
 };
 
 export default connect(mapStateToProps, {
     selectBug,
+    loadBugs,
 })(Dashboard);
