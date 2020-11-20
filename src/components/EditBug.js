@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 import { editBug } from "../actions";
+import { selectBug } from "../actions";
 
 function EditBug(props) {
     const [input, setInput] = useState(props.bug);
@@ -13,13 +15,24 @@ function EditBug(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const newBugs = props.bugs.map((bug) => {
-            if (bug.id === input.id) {
+            if (bug._id === input._id) {
                 return input;
             }
             return bug;
         });
-        props.editBug([...newBugs]);
-        props.setModalIsActive(false);
+        axios
+            .put(`http://localhost:3001/api/bugs/${props.selectedBug._id}`, {
+                editedBug: input,
+            })
+            .then((response) => {
+                props.editBug([...newBugs]);
+                props.setModalIsActive(false);
+                props.selectBug(input);
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
     return (
         <div className="new_bug_wrap">
@@ -137,9 +150,11 @@ const mapStateToProps = (state) => {
     return {
         bugs: state.bugs,
         editBug: state.editBug,
+        selectedBug: state.selectedBug,
     };
 };
 
 export default connect(mapStateToProps, {
     editBug,
+    selectBug,
 })(EditBug);

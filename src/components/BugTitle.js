@@ -7,7 +7,7 @@ export default function BugTitle(props) {
                 <span className={`severity severity--${props.severity}`}></span>
                 <h2 className="bug_title">
                     {props.title.length > 30
-                        ? `${props.title.slice(0, 35)}..`
+                        ? `${props.title.slice(0, 30)}..`
                         : props.title}
                 </h2>
             </span>

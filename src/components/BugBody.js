@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 import { deleteBug } from "../actions";
 import { selectBug } from "../actions";
@@ -11,9 +12,14 @@ import BugError from "./BugError";
 function BugBody(props) {
     const [modalIsActive, setModalIsActive] = useState(false);
     const deleteBug = (id) => {
-        const newList = props.bugs.filter((bug) => bug.id !== id);
-        props.deleteBug(newList);
-        props.selectBug(null);
+        const newList = props.bugs.filter((bug) => bug._id !== id);
+        axios
+            .delete(`http://localhost:3001/api/bugs/${props.selectedBug._id}`)
+            .then((data) => {
+                props.deleteBug(newList);
+                props.selectBug(null);
+                console.log(data);
+            });
     };
     return (
         <div className="bug_body_wrap">
@@ -41,7 +47,7 @@ function BugBody(props) {
                 </button>
                 <button
                     className="button is-danger"
-                    onClick={() => deleteBug(props.bug.id)}
+                    onClick={() => deleteBug(props.bug._id)}
                 >
                     <i className="fas fa-trash-alt"></i>Delete
                 </button>

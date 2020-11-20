@@ -23,7 +23,7 @@ function BugFeed(props) {
             <div className="bugs_wrap">
                 {props.bugs
                     .filter((bug) => checkFilters(bug))
-                    .sort((a, b) => (a.id > b.id ? -1 : 1))
+                    .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
                     .map((bug, i) => {
                         return (
                             <Bug

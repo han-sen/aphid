@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addBug } from "../actions";
+import axios from "axios";
 
 function NewBug(props) {
     const [input, setInput] = useState({
@@ -11,14 +12,29 @@ function NewBug(props) {
         summary: "",
         readOut: "",
         status: "open",
+        userId: "",
     });
     const handleChange = (event) => {
         setInput({ ...input, [event.target.id]: event.target.value });
     };
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         props.addBug(input);
-        props.setModalIsActive(false);
+        const newBug = {
+            ...input,
+            userId: props.user.googleId,
+        };
+        axios
+            .post(`http://localhost:3001/api/bugs`, {
+                newBug,
+            })
+            .then(function (response) {
+                console.log(response);
+                props.setModalIsActive(false);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
     return (
         <div className="new_bug_wrap">
@@ -132,9 +148,9 @@ function NewBug(props) {
 }
 
 const mapStateToProps = (state) => {
-    // console.log(state);
     return {
         addBug: state.addBug,
+        user: state.user,
     };
 };
 
