@@ -17,7 +17,7 @@ function NewBug(props) {
     const handleChange = (event) => {
         setInput({ ...input, [event.target.id]: event.target.value });
     };
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         props.addBug(input);
         const newBug = {
@@ -28,11 +28,11 @@ function NewBug(props) {
             .post(`http://localhost:3001/api/bugs`, {
                 newBug,
             })
-            .then(function (response) {
+            .then((response) => {
                 console.log(response);
                 props.setModalIsActive(false);
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log(error);
             });
     };

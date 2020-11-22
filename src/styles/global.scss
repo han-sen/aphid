@@ -7,6 +7,7 @@
 @import "./navbar.scss";
 @import "./expanded.scss";
 @import "./modal.scss";
+@import "./home.scss";
 
 body {
     min-height: 100vh;
@@ -33,7 +34,8 @@ label {
     background-color: $purple;
 }
 
-.fas {
+.fas,
+.fab {
     margin-right: 0.5rem;
 }
 

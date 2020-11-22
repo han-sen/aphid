@@ -73,13 +73,17 @@ function FilterForm(props) {
                         <option value="" key={1}>
                             All
                         </option>
-                        {props.bugs.map((bug, i) => {
-                            return (
-                                <option value={bug.project} key={i + 1}>
-                                    {bug.project}
-                                </option>
-                            );
-                        })}
+                        {props.bugs
+                            .map((bug) => bug.project)
+                            .sort()
+                            .filter((project, i, arr) => project !== arr[i - 1])
+                            .map((project, i) => {
+                                return (
+                                    <option value={project} key={i + 1}>
+                                        {project}
+                                    </option>
+                                );
+                            })}
                     </select>
                 </div>
             </div>
