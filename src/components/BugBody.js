@@ -14,7 +14,7 @@ function BugBody(props) {
     const deleteBug = (id) => {
         const newList = props.bugs.filter((bug) => bug._id !== id);
         axios
-            .delete(`http://localhost:3001/api/bugs/${props.selectedBug._id}`)
+            .delete(`${process.env.REACT_APP_API}bugs/${props.selectedBug._id}`)
             .then((data) => {
                 props.deleteBug(newList);
                 props.selectBug(null);

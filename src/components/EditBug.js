@@ -21,7 +21,7 @@ function EditBug(props) {
             return bug;
         });
         axios
-            .put(`http://localhost:3001/api/bugs/${props.selectedBug._id}`, {
+            .put(`${process.env.REACT_APP_API}/bugs/${props.selectedBug._id}`, {
                 editedBug: input,
             })
             .then((response) => {

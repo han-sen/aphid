@@ -4,8 +4,7 @@ import { GoogleLogout } from "react-google-login";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../actions/index";
 
-const clientId =
-    "228831500419-1pdt6pga3o2tu5c25ueio3mekuc0avbs.apps.googleusercontent.com";
+const clientId = process.env.REACT_APP_CLIENT_ID;
 
 function Login(props) {
     const history = useHistory();

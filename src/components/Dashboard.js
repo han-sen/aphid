@@ -9,12 +9,14 @@ import SideBar from "./SideBar";
 import ExpandedBug from "./ExpandedBug";
 import BugFeed from "./BugFeed";
 
+const API = process.env.REACT_APP_API;
+
 function Dashboard(props) {
     const [modalIsActive, setModalIsActive] = useState(false);
     useEffect(() => {
         if (props.user) {
             axios
-                .get(`http://localhost:3001/api/bugs/${props.user.googleId}`)
+                .get(`${API}/bugs/${props.user.googleId}`)
                 .then(function (response) {
                     props.loadBugs(response.data);
                     console.log(response);

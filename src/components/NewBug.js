@@ -25,7 +25,7 @@ function NewBug(props) {
             userId: props.user.googleId,
         };
         axios
-            .post(`http://localhost:3001/api/bugs`, {
+            .post(`${process.env.REACT_APP_API}/bugs`, {
                 newBug,
             })
             .then((response) => {
