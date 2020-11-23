@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/aphid/static/css/main.5063811c.chunk.css",
-    "main.js": "/aphid/static/js/main.b6bdd6d9.chunk.js",
-    "main.js.map": "/aphid/static/js/main.b6bdd6d9.chunk.js.map",
+    "main.js": "/aphid/static/js/main.3cb869e0.chunk.js",
+    "main.js.map": "/aphid/static/js/main.3cb869e0.chunk.js.map",
     "runtime-main.js": "/aphid/static/js/runtime-main.c04d3249.js",
     "runtime-main.js.map": "/aphid/static/js/runtime-main.c04d3249.js.map",
     "static/js/2.40bb0388.chunk.js": "/aphid/static/js/2.40bb0388.chunk.js",
     "static/js/2.40bb0388.chunk.js.map": "/aphid/static/js/2.40bb0388.chunk.js.map",
     "index.html": "/aphid/index.html",
-    "precache-manifest.ddc29a2f3ea0915eee36b0bea6f4d227.js": "/aphid/precache-manifest.ddc29a2f3ea0915eee36b0bea6f4d227.js",
+    "precache-manifest.d42b10f4ef95218c433e011bae6c1c77.js": "/aphid/precache-manifest.d42b10f4ef95218c433e011bae6c1c77.js",
     "service-worker.js": "/aphid/service-worker.js",
     "static/css/main.5063811c.chunk.css.map": "/aphid/static/css/main.5063811c.chunk.css.map",
     "static/js/2.40bb0388.chunk.js.LICENSE.txt": "/aphid/static/js/2.40bb0388.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c04d3249.js",
     "static/js/2.40bb0388.chunk.js",
     "static/css/main.5063811c.chunk.css",
-    "static/js/main.b6bdd6d9.chunk.js"
+    "static/js/main.3cb869e0.chunk.js"
   ]
 }
