@@ -6,7 +6,10 @@ export default function NavBar() {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <a className="navbar-item" href="/">
+                <a
+                    className="navbar-item"
+                    href="https://han-sen.github.io/aphid/"
+                >
                     <h1>
                         <i className="fas fa-bug"></i>Aphid
                     </h1>
@@ -29,7 +32,7 @@ export default function NavBar() {
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-start">
                     <a
-                        href="/https://github.com/han-sen/aphid"
+                        href="https://github.com/han-sen/aphid"
                         className="navbar-item"
                     >
                         Source Code

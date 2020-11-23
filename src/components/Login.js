@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { signIn } from "../actions/index";
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
-console.log(clientId);
 
 function Login(props) {
     const history = useHistory();
@@ -15,7 +14,7 @@ function Login(props) {
         history.push("/dashboard");
     };
     const onFailure = (response) => {
-        console.log(response.profileObj);
+        console.log(`Login failed: ${response}`);
     };
     return (
         <GoogleLogin
