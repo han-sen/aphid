@@ -19,11 +19,11 @@ function NewBug(props) {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.addBug(input);
         const newBug = {
             ...input,
             userId: props.user.googleId,
         };
+        props.addBug(newBug);
         axios
             .post(`${process.env.REACT_APP_API}/bugs`, {
                 newBug,
